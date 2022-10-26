@@ -68,6 +68,7 @@ st.pyplot(fig7)
 #plot8
 
 ps1=df.groupby('Segment')[['Profit','Sales']].sum().plot.bar(color=['pink','blue'],figsize=(8,5))
+fig8, ax1 = plt.subplots(figsize=(2,3))
 ax1.set_ylabel(Profit/Loss and sales)
 
 ind = 1  # the x locations for the groups
@@ -75,7 +76,7 @@ width = 0.35
 
 ax1.bar(ind, ps1.loc[state]['Sales'], width, color='royalblue')
 ax1.bar(ind+width, ps1.loc[state]['Profit'], width, color='orange')
-fig8=plt.figure(figsize=(10,8))
+
 st.pyplot(fig8)
 
 #plot9
@@ -85,6 +86,9 @@ fig9, ax2 = plt.subplots(figsize=(2,3))
 plt.title('Profit/loss & Sales across states')
 ax2.set_xticks([])
 ax2.set_xlabel(state)
+
+ind = 1  # the x locations for the groups
+width = 0.35 
 
 ax2.bar(ind, ps2.loc[state]['Sales'], width, color='royalblue')
 ax2.bar(ind+width, ps2.loc[state]['Profit'], width, color='orange')
