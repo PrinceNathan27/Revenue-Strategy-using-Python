@@ -68,11 +68,6 @@ st.pyplot(fig7)
 #plot8
 fig8=plt.figure(figsize=(10,8))
 ps1=df.groupby('Segment')[['Profit','Sales']].sum().plot.bar(color=['pink','blue'],figsize=(8,5))
-ax.set_xticks([])
-ax.set_xlabel(state)
-
-ax.bar(ind, ps.loc[state]['Sales'], width, color='red')
-ax.bar(ind+width, ps.loc[state]['Profit'], width, color='green')
 st.pyplot(fig8)
 
 
