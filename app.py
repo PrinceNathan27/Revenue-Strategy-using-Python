@@ -95,22 +95,7 @@ ax2.bar(ind+width, ps2.loc[state]['Profit'], width, color='orange')
 
 st.pyplot(fig9)
 
-#plot10
-ps3 = df.groupby('Sub-Category')[['Sales','Profit']].sum().sort_values(by='Sales',ascending=False)
-sub-Category = st.selectbox("Select Sub-Category: ", list(ps3.index))
-fig10, ax3 = plt.subplots(figsize=(2,3))
-ax3.set_title(Sub-Category.upper()+ " Sales and Profit")
 
-ind = 1  # the x locations for the groups
-width = 0.35 
-
-ax3.set_xticks([])
-ax3.set_xlabel(sub-Category)
-
-ax3.bar(ind, ps3.loc[sub-Category]['Sales'], width, color='royalblue')
-ax3.bar(ind+width, ps3.loc[sub-Category]['Profit'], width, color='orange')
-
-st.pyplot(fig10)
 
 
 
