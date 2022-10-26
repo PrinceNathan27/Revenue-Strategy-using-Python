@@ -38,7 +38,7 @@ ax.bar(ind+width, ps.loc[state]['Profit'], width, color='orange')
 st.pyplot(fig)
 
 
-fig=plt.figure(figsize=(15,12))
+fig1=plt.figure(figsize=(15,12))
 sns.countplot(x='State',data=df,palette='rocket_r',order=df['State'].value_counts().index)
 plt.xticks(rotation=90)
-st.pyplot(fig)
+st.pyplot(fig1)
