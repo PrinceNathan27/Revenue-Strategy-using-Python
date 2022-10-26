@@ -9,21 +9,20 @@ warnings.filterwarnings('ignore')
 
 
 df = pd.read_csv('SampleSuperstore.csv')  
-# df['Postal Code'] = df['Postal Code'].astype('object')
-# df.drop_duplicates(subset=None,keep='first',inplace=True)
-# corr = df.corr()
+df['Postal Code'] = df['Postal Code'].astype('object')
+df.drop_duplicates(subset=None,keep='first',inplace=True)
+corr = df.corr()
+fig2 = plt.figure(figsize=(10, 4))
+sns.heatmap(corr,annot=True,cmap='Reds')
+st.pyplot(fig2)
 
-# fig = plt.figure(figsize=(10, 4))
-
-# sns.heatmap(corr,annot=True,cmap='Reds')
-
-# st.pyplot(fig)
-
+#plot1
 fig1=plt.figure(figsize=(15,12))
 sns.countplot(x='State',data=df,palette='rocket_r',order=df['State'].value_counts().index)
 plt.xticks(rotation=90)
 st.pyplot(fig1)
 
+#various plot-2
 ps = df.groupby('State')[['Sales','Profit']].sum().sort_values(by='Sales',ascending=False)
 
 state = st.selectbox("Select State: ", list(ps.index))
