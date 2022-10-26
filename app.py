@@ -19,6 +19,11 @@ df = pd.read_csv('SampleSuperstore.csv')
 
 # st.pyplot(fig)
 
+fig1=plt.figure(figsize=(15,12))
+sns.countplot(x='State',data=df,palette='rocket_r',order=df['State'].value_counts().index)
+plt.xticks(rotation=90)
+st.pyplot(fig1)
+
 ps = df.groupby('State')[['Sales','Profit']].sum().sort_values(by='Sales',ascending=False)
 
 state = st.selectbox("Select State: ", list(ps.index))
@@ -36,9 +41,3 @@ ax.bar(ind, ps.loc[state]['Sales'], width, color='royalblue')
 ax.bar(ind+width, ps.loc[state]['Profit'], width, color='orange')
 
 st.pyplot(fig)
-
-
-fig1=plt.figure(figsize=(15,12))
-sns.countplot(x='State',data=df,palette='rocket_r',order=df['State'].value_counts().index)
-plt.xticks(rotation=90)
-st.pyplot(fig1)
