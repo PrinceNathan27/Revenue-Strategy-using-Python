@@ -97,7 +97,7 @@ st.pyplot(fig9)
 
 #plot10
 ps3 = df.groupby('Sub-Category')[['Sales','Profit']].sum().sort_values(by='Sales',ascending=False)
-Sub-Category = st.selectbox("Select State: ", list(ps3.index))
+Sub-Category = st.selectbox("Select Sub-Category: ", list(ps3.index))
 fig10, ax3 = plt.subplots(figsize=(2,3))
 ax3.set_title(Sub-Category.upper()+ " Sales and Profit")
 
