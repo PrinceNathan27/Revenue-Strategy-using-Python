@@ -55,7 +55,7 @@ ax.set_ylabel('Profit')
 st.pyplot(fig5)
 
 #plot6
-fig6=plt.figure(figsize=(2,3))
+fig6=plt.figure(figsize=(8,6))
 sns.lineplot(x='Discount',y='Profit',label='Profit',data=df)
 st.pyplot(fig6)
 
