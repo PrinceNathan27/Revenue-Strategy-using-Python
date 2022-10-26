@@ -94,10 +94,3 @@ ax2.bar(ind, ps2.loc[state]['Sales'], width, color='royalblue')
 ax2.bar(ind+width, ps2.loc[state]['Profit'], width, color='orange')
 
 st.pyplot(fig9)
-
-
-
-
-
-
-
