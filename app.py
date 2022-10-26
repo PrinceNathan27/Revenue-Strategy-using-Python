@@ -47,4 +47,16 @@ df['Region'].value_counts().plot.pie(autopct = '%1.1f%%')
 fig4=plt.figure(figsize=(10,8))
 st.pyplot(fig4)
 
+#plot5
+fig5,ax=plt.subplots(figsize=(20,8))
+ax.scatter(df['Sales'],df['Profit'])
+ax.set_xlabel('Sales')
+ax.set_ylabel('Profit')
+st.pyplot(fig5)
+
+#plot6
+fig6=plt.figure(figsize=(8,6))
+sns.lineplot(x='Discount',y='Profit',label='Profit',data=df)
+st.pyplot(fig6)
+
 
