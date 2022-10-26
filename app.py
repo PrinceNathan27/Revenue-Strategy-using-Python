@@ -47,6 +47,7 @@ df['Region'].value_counts().plot.pie(autopct = '%1.1f%%')
 fig4=plt.figure(figsize=(10,8))
 st.pyplot(fig4)
 
+#plot5 and plot6: No correlation between profit and discount 
 #plot5
 fig5,ax=plt.subplots(figsize=(20,8))
 ax.scatter(df['Sales'],df['Profit'])
@@ -58,5 +59,18 @@ st.pyplot(fig5)
 fig6=plt.figure(figsize=(10,4))
 sns.lineplot(x='Discount',y='Profit',label='Profit',data=df)
 st.pyplot(fig6)
+
+#plot7
+fig6=pl7figure(figsize=(10,4))
+sns.lineplot(x='Quantity',y='Profit',label='Profit',data=df)
+st.pyplot(fig7)
+
+#plot8
+fig8=plt.figure(figsize=(10,8))
+ps1=df.groupby('Segment')[['Profit','Sales']].sum().plot.bar(color=['pink','blue'],figsize=(8,5))
+ps2=df.plt.ylabel('Profit/Loss and sales')
+st.pyplot(fig8)
+
+
 
 
